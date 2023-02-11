@@ -9,8 +9,15 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    fontFamily: {
-      Lora: ["Lora"],
+    extend: {
+      fontFamily: {
+        Lora: ["Lora"],
+      },
+      colors: {
+        "dark-blue": "#020B50",
+        "light-green": "#C4E244",
+        "light-blue": "#434B8D",
+      },
     },
   },
   plugins: [],

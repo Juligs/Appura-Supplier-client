@@ -1,9 +1,18 @@
 import React from "react";
 import "./App.css";
-import Navigation from "./components/Navigation/navigation";
+import Navbar from "./components/NavBar/navbar";
+// import { BrowserRouter as Router } from "react-router-dom";
 
-function App() {
-  return <Navigation />;
-}
+const App = () => {
+  return (
+    // <Router>
+    <div>
+      <Navbar />
+
+      <h1>Hola</h1>
+    </div>
+    // </Router>
+  );
+};
 
 export default App;
