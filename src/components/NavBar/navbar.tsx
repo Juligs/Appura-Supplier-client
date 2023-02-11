@@ -79,11 +79,10 @@ const Navbar = () => {
                   <MdDashboard />
                 </span>
                 <span
-                  className={`text-base font-medium flex-1 duration-200${
+                  className={`text-base font-medium flex-1 ${
                     !open && "hidden"
                   }`}
                 >
-                  {" "}
                   {menu.title}
                 </span>
               </li>
