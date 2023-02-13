@@ -1,10 +1,11 @@
 import React from "react";
 import { useState } from "react";
-import { BsArrowLeftShort, BsSearch } from "react-icons/bs";
+import { BsArrowLeftShort, BsSearch, BsArrowDownShort } from "react-icons/bs";
 import { FaUserAstronaut } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
 const Navbar = () => {
   const [open, setOpen] = useState(true);
+  const [submenuOpen, setsubmenuOpen] = useState(false);
 
   const Menus = [
     { title: "MarketPlace", spacing: true },
@@ -22,6 +23,7 @@ const Navbar = () => {
     },
     { title: "Settings", spacing: true },
   ];
+
   return (
     <div className="flex">
       <div
@@ -73,7 +75,7 @@ const Navbar = () => {
             <>
               <li
                 key={index}
-                className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-light-blue rounded-md mt-2 ${
+                className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-light-blue rounded-md ${
                   menu.spacing ? "mt-9" : "mt-2"
                 }`}
               >
@@ -81,13 +83,23 @@ const Navbar = () => {
                   <MdDashboard />
                 </span>
                 <span
-                  className={`text-base font-medium flex-1 ${
+                  className={`text-base font-medium flex-1 duration-200${
                     !open && "hidden"
                   }`}
                 >
                   {menu.title}
                 </span>
+                {menu.submenu && (
+                  <BsArrowDownShort className="" onClick={() => {}} />
+                )}
               </li>
+              {menu.submenu && (
+                <ul>
+                  {menu.submenuItems.map((submenuItem, index) => (
+                    <li key={index}>{submenuItem.title}</li>
+                  ))}
+                </ul>
+              )}
             </>
           ))}
         </ul>
