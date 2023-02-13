@@ -1,18 +1,28 @@
 import React from "react";
 import { useState } from "react";
-import { BsArrowLeftShort, BsSearch } from "react-icons/bs";
+import {
+  BsArrowLeftShort,
+  BsSearch,
+  BsArrowDownShort,
+  BsFillPersonFill,
+  BsCart4,
+  BsEnvelope,
+} from "react-icons/bs";
 import { FaUserAstronaut } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
+import { AiOutlineShop } from "react-icons/ai";
+import { CiSettings } from "react-icons/ci";
 const Navbar = () => {
   const [open, setOpen] = useState(true);
+  const [submenuOpen, setsubmenuOpen] = useState(false);
 
   const Menus = [
-    { title: "MarketPlace", spacing: true },
-    { title: "Profile" },
-    { title: "Orders" },
-    { title: "Messages" },
+    { title: "MarketPlace", spacing: true, icon: <AiOutlineShop /> },
+    { title: "Profile", icon: <BsFillPersonFill /> },
+    { title: "Orders", icon: <BsCart4 /> },
+    { title: "Messages", icon: <BsEnvelope /> },
     {
-      title: "Businesses",
+      title: "My Shops",
       submenu: true,
       submenuItems: [
         { title: "Shop1" },
@@ -20,7 +30,7 @@ const Navbar = () => {
         { title: "Shop3" },
       ],
     },
-    { title: "Settings", spacing: true },
+    { title: "Settings", spacing: true, icon: <CiSettings /> },
   ];
   return (
     <div className="flex">
@@ -78,16 +88,35 @@ const Navbar = () => {
                 }`}
               >
                 <span className="text-2xl block float-left">
-                  <MdDashboard />
+                  {menu.icon ? menu.icon : <MdDashboard />}
                 </span>
                 <span
-                  className={`text-base font-medium flex-1 ${
+                  className={`text-base font-medium flex-1 duration-200 ${
                     !open && "hidden"
                   }`}
                 >
                   {menu.title}
                 </span>
+                {menu.submenu && open && (
+                  <BsArrowDownShort
+                    className={`${submenuOpen && "rotate-180"}`}
+                    onClick={() => setsubmenuOpen(!submenuOpen)}
+                  />
+                )}
               </li>
+
+              {menu.submenu && submenuOpen && open && (
+                <ul>
+                  {menu.submenuItems.map((submenuItem, index) => (
+                    <li
+                      key={index}
+                      className="text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 px-5 hover:bg-light-blue rounded-md mt-2"
+                    >
+                      {submenuItem.title}
+                    </li>
+                  ))}
+                </ul>
+              )}
             </>
           ))}
         </ul>
