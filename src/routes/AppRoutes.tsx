@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import MarketPlacePage from "../pages/MarketPlacePage/MarketPlacePage"
 
 const AppRoutes = () => {
 
@@ -7,7 +8,7 @@ const AppRoutes = () => {
   return (
     <Routes>
 
-      <Route path="/marketPlace" element={<p>Market Place</p>} />
+      <Route path="/marketPlace" element={<MarketPlacePage />} />
       <Route path="/marketPlace/details/:bussines_id" element={<p>Aqui va la tienda</p>} />
       <Route path="/:bussines_id/products/details/:product_id" element={<p>Aqui detalles de un producto</p>} />
       <Route path="/profile/:user_id" element={<p>Profile</p>} />
