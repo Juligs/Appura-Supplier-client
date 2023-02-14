@@ -1,17 +1,21 @@
 import businesservice from "../../services/business.service"
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import { BusinessData } from "../../interfaces/business.intefaces";
 
 const MarketPlacePage: React.FC = () => {
+
+    const [businesess, setBusinesess] = useState<BusinessData[]>()
+
     useEffect(() => {
 
         businesservice
             .getBusinesess()
-            .then(({ data }) => console.log(data))
+            .then(({ data }) => setBusinesess(data))
             .catch(err => console.log(err))
     }, []);
 
-    return (<h1>hey</h1>
-    )
+    return (
+        !businesess ? <h1>Loading</h1> : <>{businesess.map(elm => <p>{elm.name}</p>)}</>)
 };
 
 export default MarketPlacePage;
