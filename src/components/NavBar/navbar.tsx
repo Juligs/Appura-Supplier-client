@@ -12,11 +12,25 @@ import { FaUserAstronaut } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
 import { AiOutlineShop } from "react-icons/ai";
 import { CiSettings } from "react-icons/ci";
-const Navbar = () => {
-  const [open, setOpen] = useState(true);
-  const [submenuOpen, setsubmenuOpen] = useState(false);
 
-  const Menus = [
+interface Menu {
+  title: string;
+  icon?: JSX.Element;
+  spacing?: boolean;
+  submenu?: boolean;
+  submenuItems?: SubmenuItem[];
+}
+
+interface SubmenuItem {
+  title: string;
+  spacing?: boolean;
+}
+
+const Navbar: React.FC = () => {
+  const [open, setOpen] = useState<boolean>(true);
+  const [submenuOpen, setsubmenuOpen] = useState<boolean>(false);
+
+  const Menus: Menu[] = [
     { title: "MarketPlace", spacing: true, icon: <AiOutlineShop /> },
     { title: "Profile", icon: <BsFillPersonFill /> },
     { title: "Orders", icon: <BsCart4 /> },
@@ -79,7 +93,7 @@ const Navbar = () => {
           />
         </div>
         <ul className="pt-7">
-          {Menus.map((menu, index) => (
+          {Menus.map((menu: Menu, index: number) => (
             <>
               <li
                 key={index}
@@ -105,7 +119,7 @@ const Navbar = () => {
                 )}
               </li>
 
-              {menu.submenu && submenuOpen && open && (
+              {menu.submenu && submenuOpen && open && menu.submenuItems && (
                 <ul>
                   {menu.submenuItems.map((submenuItem, index) => (
                     <li
@@ -121,7 +135,7 @@ const Navbar = () => {
           ))}
         </ul>
       </div>
-      <div className="p-7">Home Page</div>
+      {/* <div className="p-7">Home Page</div> */}
     </div>
   );
 };

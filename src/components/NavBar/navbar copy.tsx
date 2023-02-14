@@ -1,19 +1,28 @@
 import React from "react";
 import { useState } from "react";
-import { BsArrowLeftShort, BsSearch, BsArrowDownShort } from "react-icons/bs";
+import {
+  BsArrowLeftShort,
+  BsSearch,
+  BsArrowDownShort,
+  BsFillPersonFill,
+  BsCart4,
+  BsEnvelope,
+} from "react-icons/bs";
 import { FaUserAstronaut } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
+import { AiOutlineShop } from "react-icons/ai";
+import { CiSettings } from "react-icons/ci";
 const Navbar = () => {
-  const [open, setOpen] = useState(true);
-  const [submenuOpen, setsubmenuOpen] = useState(false);
+  const [open, setOpen] = useState<boolean>(true);
+  const [submenuOpen, setsubmenuOpen] = useState<boolean>(false);
 
   const Menus = [
-    { title: "MarketPlace", spacing: true },
-    { title: "Profile" },
-    { title: "Orders" },
-    { title: "Messages" },
+    { title: "MarketPlace", spacing: true, icon: <AiOutlineShop /> },
+    { title: "Profile", icon: <BsFillPersonFill /> },
+    { title: "Orders", icon: <BsCart4 /> },
+    { title: "Messages", icon: <BsEnvelope /> },
     {
-      title: "Businesses",
+      title: "My Shops",
       submenu: true,
       submenuItems: [
         { title: "Shop1" },
@@ -21,9 +30,8 @@ const Navbar = () => {
         { title: "Shop3" },
       ],
     },
-    { title: "Settings", spacing: true },
+    { title: "Settings", spacing: true, icon: <CiSettings /> },
   ];
-
   return (
     <div className="flex">
       <div
@@ -75,28 +83,37 @@ const Navbar = () => {
             <>
               <li
                 key={index}
-                className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-light-blue rounded-md ${
+                className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-light-blue rounded-md mt-2 ${
                   menu.spacing ? "mt-9" : "mt-2"
                 }`}
               >
                 <span className="text-2xl block float-left">
-                  <MdDashboard />
+                  {menu.icon ? menu.icon : <MdDashboard />}
                 </span>
                 <span
-                  className={`text-base font-medium flex-1 duration-200${
+                  className={`text-base font-medium flex-1 duration-200 ${
                     !open && "hidden"
                   }`}
                 >
                   {menu.title}
                 </span>
-                {menu.submenu && (
-                  <BsArrowDownShort className="" onClick={() => {}} />
+                {menu.submenu && open && (
+                  <BsArrowDownShort
+                    className={`${submenuOpen && "rotate-180"}`}
+                    onClick={() => setsubmenuOpen(!submenuOpen)}
+                  />
                 )}
               </li>
-              {menu.submenu && (
+
+              {menu.submenu && submenuOpen && open && (
                 <ul>
                   {menu.submenuItems.map((submenuItem, index) => (
-                    <li key={index}>{submenuItem.title}</li>
+                    <li
+                      key={index}
+                      className="text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 px-5 hover:bg-light-blue rounded-md mt-2"
+                    >
+                      {submenuItem.title}
+                    </li>
                   ))}
                 </ul>
               )}
@@ -104,7 +121,7 @@ const Navbar = () => {
           ))}
         </ul>
       </div>
-      <div className="p-7">Home Page</div>
+      {/* <div className="p-7">Home Page</div> */}
     </div>
   );
 };
