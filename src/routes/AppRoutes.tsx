@@ -1,5 +1,5 @@
 const AppRoutes = () => {
-  return <h1>Somos las rutas </h1>;
+  return <h1> </h1>;
 };
 
 export default AppRoutes;
