@@ -16,7 +16,13 @@ const MarketPlacePage: React.FC = () => {
   return !businesess ? (
     <h1>Loading</h1>
   ) : (
-    <BusinessList businesess={businesess} />
+    <div>
+      <h1 className="font-medium leading-tight text-5xl mt-0 mb-2 text-dark-blue">
+        Market Place
+      </h1>
+      <hr />
+      <BusinessList businesess={businesess} />
+    </div>
   );
 };
 
