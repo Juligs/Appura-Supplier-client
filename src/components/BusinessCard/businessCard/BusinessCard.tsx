@@ -5,15 +5,15 @@ interface BusinessCardProps {
 
 const BusinessCard: React.FC<BusinessCardProps> = ({ name, businessImg }) => {
   return (
-    <div className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-5">
+    <div className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-6">
       <a href="#">
         <img
-          className="p-8 rounded-t-lg"
+          className="rounded-t-lg businessCard w-[400px] object-cover"
           src={businessImg}
           alt="product image"
         />
       </a>
-      <div className="px-5 pb-5">
+      <div className="px-5 pb-5 ">
         <a href="#">
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
             {name}
