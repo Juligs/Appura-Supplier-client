@@ -1,7 +1,7 @@
 import businesservice from "../../services/business.service";
 import React, { useEffect, useState } from "react";
 import { BusinessData } from "../../interfaces/business.intefaces";
-import BusinessList from "../../components/NavBar/BusinessList/BusinessList";
+import BusinessList from "../../components/BusinessList/BusinessList";
 
 const MarketPlacePage: React.FC = () => {
   const [businesess, setBusinesess] = useState<BusinessData[]>();

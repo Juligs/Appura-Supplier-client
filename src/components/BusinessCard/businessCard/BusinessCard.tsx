@@ -1,17 +1,22 @@
-function BusinessCard() {
+interface BusinessCardProps {
+  name: string;
+  businessImg: string;
+}
+
+const BusinessCard: React.FC<BusinessCardProps> = ({ name, businessImg }) => {
   return (
     <div className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-5">
       <a href="#">
         <img
           className="p-8 rounded-t-lg"
-          src="/docs/images/products/apple-watch.png"
+          src={businessImg}
           alt="product image"
         />
       </a>
       <div className="px-5 pb-5">
         <a href="#">
           <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-            Titulo del negocio
+            {name}
           </h5>
         </a>
         <div className="flex items-center mt-2.5 mb-5">
@@ -83,6 +88,6 @@ function BusinessCard() {
       </div>
     </div>
   );
-}
+};
 
 export default BusinessCard;
