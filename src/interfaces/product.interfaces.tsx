@@ -5,6 +5,7 @@ export interface ProductData {
     inventory?: number;
     categories: "Frozen" | "Canned Goods" | "Vegetables and fruit" | "Condiments & Spices" | "Cereal" | "Paper & Wrap" | "Garendening" | "Diary" | "Meat & Fish" | "Cleaning Supplies" | "Alcoholic Beverages" | "Baking Goods" | "Stationery" | "Construction Supplies" | "Kitchen Supplies" | "Appliances" | "Linens" | "General";
     pricePerUnit: number;
-    unit?: "Ounces" | "Pounds" | "tons" | "uq";
+
+    _id: number
 }
 

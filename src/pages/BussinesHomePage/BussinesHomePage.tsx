@@ -2,26 +2,41 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import businesservice from "../../services/business.service";
 import { BusinessData } from "../../interfaces/business.intefaces";
+// import { ProductsList } from "../../components/ProductsList/ProductsList"
+// import { ProductData } from "../../interfaces/product.interfaces";
+// import { BusinessList } from "../../components/BusinessList/BusinessList"
 
-const BussinesHomePage: React.FC = () => {
+
+
+interface BusinessPageProps {
+  name?: string
+}
+
+const BussinesHomePage: React.FC<BusinessPageProps> = () => {
+
   const { business_id } = useParams<{ business_id: string | undefined }>();
-  const [businesess, setBusinesess] = useState<BusinessData[]>();
+  const [business, setBusiness] = useState<BusinessData>();
+  // const [products, setProducts] = useState<ProductData[]>()
+
 
 
   useEffect(() => {
     businesservice
       .details((business_id))
-      .then(({ data }) => setBusinesess(data))
+      .then(({ data }) => setBusiness(data))
       .catch((err) => console.log(err));
-  }, [business_id]);
+  }, []);
 
-  console.log(business_id)
+
 
 
   return (
     <div>
-      <h1>Detalles Shop</h1>
+      <h1>Detalles {business?.name}</h1>
       <hr />
+      {/* <BusinessList businesess={business} /> */}
+
+
     </div>
   );
 };
