@@ -7,11 +7,11 @@ const AppRoutes = () => {
     <Routes>
       <Route path="/marketPlace" element={<MarketPlacePage />} />
       <Route
-        path="/marketPlace/details/:bussines_id"
+        path="/marketplace/details/:business_id"
         element={<BussinesHomePage />}
       />
       <Route
-        path="/:bussines_id/products/details/:product_id"
+        path="/:business_id/products/details/:product_id"
         element={<p>Aqui detalles de un producto</p>}
       />
       <Route path="/profile/:user_id" element={<p>Profile</p>} />

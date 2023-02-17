@@ -13,7 +13,7 @@ class Businesservice {
     return this.api.get("/getAllBusinesses");
   }
 
-  details(business_id: number) {
+  details(business_id: string | undefined) {
     return this.api.get(`/details/${business_id}`);
   }
 
@@ -37,8 +37,8 @@ class Businesservice {
     return this.api.post("/saveBusiness", businessData);
   }
 
-  edit(businesses_id: number, updateUBusinesses: BusinessData) {
-    return this.api.put(`/edit/${businesses_id}`, updateUBusinesses);
+  edit(business_id: string, updateUBusinesses: BusinessData) {
+    return this.api.put(`/edit/${business_id}`, updateUBusinesses);
   }
 }
 

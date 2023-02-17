@@ -4,15 +4,19 @@ import businesservice from "../../services/business.service";
 import { BusinessData } from "../../interfaces/business.intefaces";
 
 const BussinesHomePage: React.FC = () => {
-  const { business_id } = useParams();
+  const { business_id } = useParams<{ business_id: string | undefined }>();
   const [businesess, setBusinesess] = useState<BusinessData[]>();
+
 
   useEffect(() => {
     businesservice
-      .details(Number(business_id))
+      .details((business_id))
       .then(({ data }) => setBusinesess(data))
       .catch((err) => console.log(err));
-  });
+  }, [business_id]);
+
+  console.log(business_id)
+
 
   return (
     <div>
