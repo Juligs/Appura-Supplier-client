@@ -9,6 +9,6 @@ export interface BusinessData {
   owner: string;
   employees: string[];
   minOrderRequired: number;
-  productList: string[];
+  productList: [];
   _id: string;
 }
