@@ -12,10 +12,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   return (
     <div className="bg-white shadow rounded mt-2.5 m-6 ">
-      <div
-      // className="h-48 w-full bg-gray-200 flex flex-col justify-between p-4 bg-cover bg-center"
-      // style="background-image: url('https://images.pexels.com/photos/7989741/pexels-photo-7989741.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940')"
-      >
+      <div>
         <a href="#">
           <img
             className="rounded-t-lg businessCard w-[400px] object-cover"

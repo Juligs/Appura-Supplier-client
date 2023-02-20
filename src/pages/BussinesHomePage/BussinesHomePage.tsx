@@ -25,8 +25,22 @@ const BussinesHomePage: React.FC<BusinessPageProps> = () => {
 
   return (
     <div>
+      <div
+        style={{ height: "200px" }}
+        className="border-radius: 10px object-cover"
+      >
+        <img
+          src={business?.businessImg}
+          style={{ width: "100%", height: "90%", objectFit: "cover" }}
+        ></img>
+      </div>
+      {/* <div>
+        <img src={business?.businessImg}></img>
+      </div> */}
+
       <h1 className="font-medium leading-tight text-5xl mt-0 mb-2 text-dark-blue">
         {business?.name}
+        {business?.decription}
       </h1>
 
       <hr />
