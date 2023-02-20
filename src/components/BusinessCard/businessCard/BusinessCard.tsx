@@ -5,7 +5,7 @@ interface BusinessCardProps {
 
 const BusinessCard: React.FC<BusinessCardProps> = ({ name, businessImg }) => {
   return (
-    <div className=" bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-6">
+    <div className="w-100% bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-6">
       <a href="#">
         <img
           className="rounded-t-lg businessCard w-[400px] object-cover"

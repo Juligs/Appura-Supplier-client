@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import businesservice from "../../services/business.service";
 import { BusinessData } from "../../interfaces/business.intefaces";
-import { ProductsList } from "../../components/ProductsList/ProductsList";
+// import { ProductsList } from "../../components/ProductsList/ProductsList"
 import { ProductData } from "../../interfaces/product.interfaces";
 // import { BusinessList } from "../../components/BusinessList/BusinessList"
-import ProductCard from "../../components/ProductCard/ProductCard";
 
 interface BusinessPageProps {
   name?: string;
@@ -25,22 +24,22 @@ const BussinesHomePage: React.FC<BusinessPageProps> = () => {
 
   return (
     <div>
-      <h1 className="font-medium leading-tight text-5xl mt-0 mb-2 text-dark-blue">
-        {business?.name}
-      </h1>
-
+      <h1>Detalles {business?.name}</h1>
       <hr />
       <div>
-        <div className=" grid grid-cols-1 md:grid-cols-4">
-          {business?.productList.map((product: ProductData) => (
-            <div key={product._id}>
-              <ProductCard key={product._id} {...product} />
-            </div>
-          ))}
-        </div>
+        {business?.productList.map((product: ProductData) => (
+          <div key={product._id}>
+            <h2>{product.name}</h2>
+            <p>{product.description}</p>
+            <img src={product.productImg} alt={product.name} />
+            <p>Price per unit: {product.pricePerUnit}</p>
+          </div>
+        ))}
       </div>
     </div>
   );
 };
 
 export default BussinesHomePage;
+
+
