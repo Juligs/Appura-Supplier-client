@@ -1,12 +1,17 @@
 interface BusinessCardProps {
   name: string;
   businessImg: string;
+  _id: string;
 }
 
-const BusinessCard: React.FC<BusinessCardProps> = ({ name, businessImg }) => {
+const BusinessCard: React.FC<BusinessCardProps> = ({
+  name,
+  businessImg,
+  _id,
+}) => {
   return (
     <div className="w-100% bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-6">
-      <a href="#">
+      <a href={`/marketplace/details/${_id}`}>
         <img
           className="rounded-t-lg businessCard w-[400px] object-cover"
           src={businessImg}
@@ -79,7 +84,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({ name, businessImg }) => {
             $599
           </span>
           <a
-            href="#"
+            href={`/marketplace/details/${_id}`}
             className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
           >
             Shop!
