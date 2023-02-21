@@ -4,6 +4,7 @@ import BusinessCard from "../BusinessCard/businessCard/BusinessCard";
 const BusinessList: React.FC<{ businesess: BusinessData[] }> = ({
   businesess,
 }) => {
+  console.log(businesess)
   return (
     <div className=" grid grid-cols-1 md:grid-cols-4">
       <>
