@@ -8,6 +8,16 @@ class Businesservice {
     this.api = axios.create({
       baseURL: `${process.env.REACT_APP_API_URL}/business`,
     });
+    this.api.interceptors.request.use((config) => {
+      const storedToken =
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U1MmY3MmMwYzA2YzliN2FmNmNiYmQiLCJlbWFpbCI6InNhbnRpMTIzQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoic2FudGkiLCJwcm9maWxlSW1nIjoiaHR0cHM6Ly9pLnBpbmltZy5jb20vNzM2eC8zZC9jZC80YS8zZGNkNGFmNWJjOWUwNmQzNjMwNTk4NDczMGFiNzg4OC5qcGciLCJpYXQiOjE2NzY5MjA1MTMsImV4cCI6MTY3Njk0MjExM30.4sjXwWe270NoE3wgJ9RZTmqeAQPWTmPq0zDVRD3MJxo";
+
+      if (storedToken) {
+        config.headers.Authorization = `Bearer ${storedToken}`;
+      }
+
+      return config;
+    });
   }
   getBusinesess() {
     return this.api.get("/getAllBusinesses");
@@ -33,8 +43,8 @@ class Businesservice {
     return this.api.get(`/createdBusinesses/${user_id}`);
   }
 
-  saveBusiness(businessData: BusinessData) {
-    return this.api.post("/saveBusiness", businessData);
+  newBusiness(businessData: BusinessData) {
+    return this.api.post("/newBusiness", businessData);
   }
 
   edit(business_id: string, updateUBusinesses: BusinessData) {

@@ -1,7 +1,7 @@
 interface BusinessCardProps {
   name: string;
   businessImg: string;
-  _id: string;
+  _id?: string;
 }
 
 const BusinessCard: React.FC<BusinessCardProps> = ({

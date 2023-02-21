@@ -40,13 +40,13 @@ const BussinesHomePage: React.FC<BusinessPageProps> = () => {
 
       <h1 className="font-medium leading-tight text-5xl mt-0 mb-2 text-dark-blue">
         {business?.name}
-        {business?.decription}
+        {business?.description}
       </h1>
 
       <hr />
       <div>
         <div className=" grid grid-cols-1 md:grid-cols-4">
-          {business?.productList.map((product: ProductData) => (
+          {business?.productList?.map((product: ProductData) => (
             <div key={product._id}>
               <ProductCard key={product._id} {...product} />
             </div>
