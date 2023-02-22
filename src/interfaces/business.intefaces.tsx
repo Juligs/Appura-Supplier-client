@@ -10,5 +10,5 @@ export interface BusinessData {
   employees?: string[];
   minOrderRequired?: number;
   productList?: [];
-  _id?: string;
+  _id: string;
 }
