@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import MarketPlacePage from "../pages/MarketPlacePage/MarketPlacePage";
 import BussinesHomePage from "../pages/BussinesHomePage/BussinesHomePage";
 import CreateBusinessPage from "../pages/CreateBusinessPage/CreateBusinessPage";
+import SignupPage from "../pages/SignupPage/SignUpPage";
 
 const AppRoutes = () => {
   return (
@@ -14,6 +15,10 @@ const AppRoutes = () => {
       <Route
         path="/:business_id/products/details/:product_id"
         element={<p>Aqui detalles de un producto</p>}
+      />
+      <Route
+        path="/signup"
+        element={<SignupPage />}
       />
       <Route path="/profile/:user_id" element={<p>Profile</p>} />
       <Route path="/cart" element={<p>Shopping Cart</p>} />
