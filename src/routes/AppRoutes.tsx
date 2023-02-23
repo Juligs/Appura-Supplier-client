@@ -3,6 +3,7 @@ import MarketPlacePage from "../pages/MarketPlacePage/MarketPlacePage";
 import BussinesHomePage from "../pages/BussinesHomePage/BussinesHomePage";
 import CreateBusinessPage from "../pages/CreateBusinessPage/CreateBusinessPage";
 import SignupPage from "../pages/SignupPage/SignUpPage";
+import LoginPage from "../pages/LoginPage/LoginPage";
 
 const AppRoutes = () => {
   return (
@@ -28,7 +29,7 @@ const AppRoutes = () => {
       <Route path="/myshops/shop2" element={<p>Shop 2</p>} />
       <Route path="/myshops/shop3" element={<p>Shop 3</p>} />
       <Route path="/settings" element={<p>Settings</p>} />
-      <Route path="/log-in" element={<p>Login</p>} />
+      <Route path="/login" element={<LoginPage />} />
       <Route path="/*" element={<p>404</p>} />
     </Routes>
   );

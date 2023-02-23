@@ -14,6 +14,7 @@ import { MdDashboard } from "react-icons/md";
 import { AiOutlineShop, AiFillPlusCircle } from "react-icons/ai";
 import { CiSettings } from "react-icons/ci";
 import { MdCreate } from "react-icons/md";
+import { BiLogIn } from "react-icons/bi"
 
 interface Menu {
   title: string;
@@ -101,6 +102,15 @@ const Navbar: React.FC = () => {
       icon: (
         <Link to="/signup">
           <MdCreate />
+        </Link>
+      ),
+    },
+
+    {
+      title: "Login",
+      icon: (
+        <Link to="/login">
+          <BiLogIn />
         </Link>
       ),
     },

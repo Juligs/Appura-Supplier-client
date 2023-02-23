@@ -7,65 +7,71 @@ import { AxiosResponse } from "axios";
 import { UserData, RoleTypes } from "../../interfaces/user.interface";
 import authService from "../../services/auth.service";
 
-const SignupForm: React.FC = () => {
+const LoginForm: React.FC = () => {
     const navigate = useNavigate();
-    const [signupData, setSignupData] = useState<UserData>({
+    const [loginData, setloginData] = useState<UserData>({
         username: "",
         email: "",
         profileImg: "",
         password: "",
         bio: "",
+
+
     });
 
-    interface UploadResponse {
-        cloudinary_url: string;
-    }
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = e.target;
-        setSignupData({ ...signupData, [name]: value });
+        setloginData({ ...loginData, [name]: value });
     };
-
 
     const handleFormSubmit: FormEventHandler<HTMLFormElement> = (e) => {
-        console.log({ signupData });
+        console.log({ loginData });
         e.preventDefault();
         authService
-            .signup(signupData)
+            .login(loginData)
             .then(() => {
-                console.log("Esta creado", signupData);
-                navigate("/login");
+                navigate("/marketplace");
+                console.log("Esta creado", loginData);
             })
             .catch((err) => console.log(err));
 
     };
 
-    const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-        const formData = new FormData();
-        const selectedFile = e.target.files?.[0];
-        formData.append("imageData", selectedFile as Blob);
-        uploadServices
-            .uploadimage(formData)
-            .then((res: AxiosResponse<UploadResponse>) => {
-                console.log({ res });
-                setSignupData({
-                    ...signupData,
-                    profileImg: res.data.cloudinary_url,
-                });
-            })
-            .catch((err) => console.log(err));
-    };
+    // const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //     const formData = new FormData();
+    //     const selectedFile = e.target.files?.[0];
+    //     formData.append("imageData", selectedFile as Blob);
+    //     uploadServices
+    //         .uploadimage(formData)
+    //         .then((res: AxiosResponse<UploadResponse>) => {
+    //             console.log({ res });
+    //             setloginData({
+    //                 ...loginData,
+    //                 profileImg: res.data.cloudinary_url,
+    //             });
+    //         })
+    //         .catch((err) => console.log(err));
+    // };
 
-    const { username, email, profileImg, password, bio } = signupData;
-
+    const { username, email, password } = loginData;
 
     return (
         <>
+
             <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 sm:max-w-lg w-full p-10 bg-white rounded-xl z-10">
                 <div className="text-center">
                     <h2 className="mt-5 text-3xl font-bold text-gray-900">
-                        Sign-Up
+                        Login
                     </h2>
+
+                    <div className="flex flex-wrap justify-center">
+                        <div className="w-6/12 sm:w-4/12 px-4">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/98/Logos.svg/1200px-Logos.svg.png" alt="..." className="shadow rounded-full max-w-full h-auto align-middle border-none" />
+                        </div>
+                    </div>
+
+
                     <p className="mt-2 text-sm text-gray-400">
                         Welcome to APPURA
                     </p>
@@ -114,20 +120,8 @@ const SignupForm: React.FC = () => {
                             name="password"
                         />
                     </div>
-                    <div className="grid grid-cols-1 space-y-2">
-                        <label className="text-sm font-bold text-gray-500 tracking-wide">
-                            Add a small Bio!
-                        </label>
-                        <input
-                            className="text-base p-2 border border-gray-300 rounded-lg focus:outline-none focus:border-indigo-500"
-                            type="text"
-                            value={bio}
-                            onChange={handleInputChange}
-                            name="bio"
-                        />
-                    </div>
 
-                    <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                    {/* <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                         Upload file
                     </label>
                     <input
@@ -143,7 +137,7 @@ const SignupForm: React.FC = () => {
                     >
                         A profile picture is useful to confirm your are logged into your
                         account
-                    </div>
+                    </div> */}
 
                     <div>
                         <button
@@ -160,4 +154,4 @@ const SignupForm: React.FC = () => {
     );
 };
 
-export default SignupForm;
+export default LoginForm;
