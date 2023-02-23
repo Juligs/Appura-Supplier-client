@@ -8,6 +8,7 @@ import { ProductData } from "../../interfaces/product.interfaces";
 // import { BusinessList } from "../../components/BusinessList/BusinessList"
 import ProductCard from "../../components/ProductCard/ProductCard";
 import ProductForm from "../../components/ProductForm/ProductForm";
+import { AiFillPlusCircle } from "react-icons/ai";
 
 const BussinesHomePage: React.FC = () => {
   let [isOpen, setIsOpen] = useState(true);
@@ -51,11 +52,13 @@ const BussinesHomePage: React.FC = () => {
 
         <div className="flex">
           <div>
-            <h1 className="font-medium leading-tight text-5xl mt-0 mb-2 text-dark-blue">
-              {business?.name}
-              {business?.description}
-            </h1>
 
+            <div className="relative bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-1000 sm:max-w-lg w-full p-10 bg-white rounded-xl z-10 mb-5">
+              <h1 className="font-medium leading-tight text-5xl mt-0 mb-2 text-dark-blue font-extrabold">
+                {business?.name}
+              </h1>
+              <p className="text-gray-500"> {business?.description}</p>
+            </div>
             <hr />
             <div>
               <div className="grid grid-cols-1 md:grid-cols-4">
@@ -69,14 +72,21 @@ const BussinesHomePage: React.FC = () => {
           </div>
 
           <div>
-            <div>
+            <div className="flex">
+
               <button
                 type="button"
                 onClick={openModal}
-                className="rounded-md bg-black bg-opacity-100 px-4 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-100"
+                className="whitespace-nowrap inline-flex items-center rounded-md bg-dark-blue bg-opacity-100 px-2 py-2 text-sm font-medium text-white hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-100"
               >
-                Add Products
+                <div className="text-lg mr-4 ml-2" >
+                  <AiFillPlusCircle />
+                </div>
+                <div className="text-left  m-1 font-bold">
+                  Add Products
+                </div>
               </button>
+
             </div>
 
             <Transition appear show={isOpen} as={Fragment}>
@@ -106,14 +116,14 @@ const BussinesHomePage: React.FC = () => {
                     >
                       <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
 
-                        <div className="mt-2">
+                        <div className="mt-1">
                           <ProductForm
                             fireFinalActions={fireFinalActions}
                             business_id={business_id ? business_id : ""}
                           />
                         </div>
 
-                        <div className="mt-4">
+                        {/* <div className="mt-4">
                           <button
                             type="button"
                             className="inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-900 hover:bg-blue-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2"
@@ -121,7 +131,7 @@ const BussinesHomePage: React.FC = () => {
                           >
 
                           </button>
-                        </div>
+                        </div> */}
                       </Dialog.Panel>
                     </Transition.Child>
                   </div>

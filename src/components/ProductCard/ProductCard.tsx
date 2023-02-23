@@ -32,7 +32,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
         </p>
         <h1 className="text-gray-800 text-center mt-1">{name}</h1>
 
-        <p className="text-center text-gray-800 mt-1">{pricePerUnit} $</p>
+        <p className="text-center text-gray-800 mt-1">${pricePerUnit} </p>
         <div className="inline-flex items-center mt-2">
           <button className="bg-white rounded-l border text-gray-600 hover:bg-gray-100 active:bg-gray-200 disabled:opacity-50 inline-flex items-center px-2 py-1 border-r border-gray-200">
             <svg
@@ -71,8 +71,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </button>
         </div>
 
-        <button className="py-2 px-4 bg-blue-500 text-white rounded hover:bg-blue-600 active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center">
-          Add to order
+        <button className="py-2 px-4 bg-dark-blue text-white rounded hover:bg-blue-200 active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center">
+          Add to cart
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6 ml-2"
