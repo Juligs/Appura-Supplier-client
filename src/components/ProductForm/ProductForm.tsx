@@ -17,6 +17,8 @@ interface ProductFormProps {
   fireFinalActions: () => void;
 }
 
+
+
 const ProductForm: React.FC<ProductFormProps> = ({
   fireFinalActions,
   business_id,
@@ -221,6 +223,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
               type="submit"
               className="my-5 w-full flex justify-center bg-blue-500 text-gray-100 p-4  rounded-full tracking-wide
                font-semibold  focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300"
+
             >
               Add Product to Your Shop
             </button>

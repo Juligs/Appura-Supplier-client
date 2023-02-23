@@ -10,7 +10,7 @@ class Businesservice {
     });
     this.api.interceptors.request.use((config) => {
       const storedToken =
-        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U1MmY3MmMwYzA2YzliN2FmNmNiYmQiLCJlbWFpbCI6InNhbnRpMTIzQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoic2FudGkiLCJwcm9maWxlSW1nIjoiaHR0cHM6Ly9pLnBpbmltZy5jb20vNzM2eC8zZC9jZC80YS8zZGNkNGFmNWJjOWUwNmQzNjMwNTk4NDczMGFiNzg4OC5qcGciLCJpYXQiOjE2NzY5ODczNDgsImV4cCI6MTY3NzAwODk0OH0.AhZNuA-KjBjnY_tvpmyMrXDlofKacznsXhG-tXXxnFc";
+        "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2M2U1MmY3MmMwYzA2YzliN2FmNmNiYmQiLCJlbWFpbCI6InNhbnRpMTIzQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoic2FudGkiLCJwcm9maWxlSW1nIjoiaHR0cHM6Ly9pLnBpbmltZy5jb20vNzM2eC8zZC9jZC80YS8zZGNkNGFmNWJjOWUwNmQzNjMwNTk4NDczMGFiNzg4OC5qcGciLCJpYXQiOjE2NzcxNjI5MjUsImV4cCI6MTY3NzE4NDUyNX0.2cVmAIfy8LbN19rKOqNgd3k8rTPp0Th4LfMIN2Qb9FE";
 
       if (storedToken) {
         config.headers.Authorization = `Bearer ${storedToken}`;
