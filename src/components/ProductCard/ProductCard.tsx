@@ -71,7 +71,7 @@ const ProductCard: React.FC<ProductCardProps> = ({
           </button>
         </div>
 
-        <button className="py-2 px-4 bg-dark-blue text-white rounded hover:bg-blue-200 active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center">
+        <button className="py-2 px-4 bg-dark-blue text-white rounded hover:bg-light-green active:bg-blue-700 disabled:opacity-50 mt-4 w-full flex items-center justify-center">
           Add to cart
           <svg
             xmlns="http://www.w3.org/2000/svg"

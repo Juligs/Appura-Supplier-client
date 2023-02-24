@@ -133,44 +133,6 @@ const BusinessForm: React.FC = () => {
             account
           </div>
 
-          {/* <div className="grid grid-cols-1 space-y-2">
-            <label className="text-sm font-bold text-gray-500 tracking-wide">
-              Import Image
-            </label>
-            <div className="flex items-center justify-center w-full">
-              <label className="flex flex-col rounded-lg border-4 border-dashed w-full h-60 p-10 group text-center">
-                <div className="h-full w-full text-center flex flex-col items-center justify-center items-center  ">
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="w-10 h-10 text-blue-400 group-hover:text-blue-600"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"
-                    />
-                  </svg>
-
-
-                  <p className="pointer-none text-gray-500 ">
-                    <span className="text-sm">Drag and drop</span> files here{" "}
-                    <br /> or{" "}
-                    <p className="text-blue-600 hover:underline">
-                      select a file
-                    </p>{" "}
-                    from your computer
-                  </p>
-                </div>
-
-                <input type="file" onChange={handleFileUpload} className="hidden" value={businessImg} />
-              </label>
-            </div>
-          </div> */}
-
           <div>
             <button
               type="submit"
