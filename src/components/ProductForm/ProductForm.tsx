@@ -9,8 +9,6 @@ import { FormEventHandler } from "react";
 import { useNavigate } from "react-router-dom";
 import uploadServices from "../../services/upload.service";
 import { AxiosResponse } from "axios";
-import productservice from "../../services/product.service";
-import { BusinessData } from "../../interfaces/business.intefaces";
 
 interface ProductFormProps {
   business_id: string;
@@ -34,14 +32,10 @@ const ProductForm: React.FC<ProductFormProps> = ({
   });
   let [isOpen, setIsOpen] = useState(true);
 
-
   function closeModal() {
     setIsOpen(false);
   }
 
-  function openModal() {
-    setIsOpen(true);
-  }
   interface UploadResponse {
     cloudinary_url: string;
   }
@@ -232,7 +226,6 @@ const ProductForm: React.FC<ProductFormProps> = ({
               className="my-5 w-full flex justify-center bg-blue-500 text-gray-100 p-4  rounded-full tracking-wide
                font-semibold  focus:outline-none focus:shadow-outline hover:bg-blue-600 shadow-lg cursor-pointer transition ease-in duration-300"
               onClick={closeModal}
-
             >
               Add Product to Your Shop
             </button>
