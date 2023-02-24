@@ -5,8 +5,7 @@ const LoginPage = () => {
     return (
 
         <>
-
-            <div> <LoginForm /> </div>
+            <div className="m-4 flex justify-center"> <LoginForm /> </div>
         </>
 
 
