@@ -12,7 +12,7 @@ import {
 import { FaUserAstronaut } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
 import { AiOutlineShop, AiFillPlusCircle } from "react-icons/ai";
-import { CiSettings } from "react-icons/ci";
+import { CiSettings, CiLogout } from "react-icons/ci";
 import { MdCreate } from "react-icons/md";
 import { BiLogIn } from "react-icons/bi";
 import { UserData } from "../../interfaces/user.interface";
@@ -37,7 +37,7 @@ const Navbar: React.FC = () => {
   const [open, setOpen] = useState<boolean>(true);
   const [submenuOpen, setsubmenuOpen] = useState<boolean>(false);
 
-  const { user } = React.useContext(AuthContext);
+  const { user, logoutUser } = React.useContext(AuthContext);
   const Menus: Menu[] = [
     {
       title: "MarketPlace",
@@ -118,6 +118,22 @@ const Navbar: React.FC = () => {
         </Link>
       ),
     },
+
+    {
+      title: "logout",
+      icon: (
+        <Link to="/login">
+          <CiLogout onClick={() => logoutUser} />
+        </Link>
+      ),
+    },
+
+    // <div>
+    //   <CiLogout
+    //     className={`${submenuOpen && "rotate-180"}`}
+    //     onClick={() => logoutUser}
+    //   />
+    // </div>,
   ];
   return (
     <div className="flex">
