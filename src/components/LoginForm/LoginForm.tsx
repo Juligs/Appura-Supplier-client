@@ -53,7 +53,7 @@ const LoginForm: React.FC = () => {
 
   return (
     <>
-      <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 sm:max-w-lg w-full p-10 bg-white rounded-xl z-10">
+      <div className="bg-white  sm:max-w-lg w-full p-10 bg-white rounded-xl z-10">
         <div className="text-center">
           <div className="flex flex-wrap justify-center">
             <div className="w-100%">

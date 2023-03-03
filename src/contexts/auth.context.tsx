@@ -1,6 +1,5 @@
 import { createContext, useEffect, useState } from "react";
 import authService from "../services/auth.service";
-
 interface AuthContextProps {
   storeToken: (token: string) => void;
   authenticateUser: () => void;
@@ -9,10 +8,10 @@ interface AuthContextProps {
 }
 
 const AuthContext = createContext<AuthContextProps>({
-  storeToken: () => {},
-  authenticateUser: () => {},
+  storeToken: () => { },
+  authenticateUser: () => { },
   user: null,
-  logoutUser: () => {},
+  logoutUser: () => { },
 });
 
 function AuthProviderWrapper(props: { children: React.ReactNode }) {
@@ -38,6 +37,8 @@ function AuthProviderWrapper(props: { children: React.ReactNode }) {
     localStorage.removeItem("authToken");
   };
 
+
+
   useEffect(() => {
     authenticateUser();
   }, []);
@@ -50,5 +51,4 @@ function AuthProviderWrapper(props: { children: React.ReactNode }) {
     </AuthContext.Provider>
   );
 }
-
 export { AuthContext, AuthProviderWrapper };
