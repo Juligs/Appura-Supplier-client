@@ -21,46 +21,6 @@ class Businesservice {
   }
 
 
-  // // constructor() {
-
-  // //   this.api = axios.create({
-  // //     baseURL: `${process.env.REACT_APP_API_URL}/posts`
-  // //   })
-  //   this.api.interceptors.request.use((config) => {
-
-  //     const storedToken = localStorage.getItem("authToken");
-
-  //     if (storedToken) {
-  //       config.headers = { Authorization: `Bearer ${storedToken}` }
-  //     }
-
-  //     return config
-  //   })
-  // }
-
-
-  // //   constructor() {
-  // //     this.api = axios.create({
-  // //       baseURL: `${process.env.REACT_APP_API_URL}/business`,
-  // //     });
-
-  // //     this.api.interceptors.request.use((config: AxiosRequestConfig) => {
-  // //       const storedToken = localStorage.getItem('authToken');
-
-  // //       if (storedToken) {
-  // //         config.headers.Authorization = `Bearer ${storedToken}` as AxiosHeaders['Authorization'];
-  // //       }
-
-  // //       return config;
-  // //     });
-  // //   }
-  // }
-
-
-
-
-
-
   getBusinesess() {
     return this.api.get("/getAllBusinesses");
   }
