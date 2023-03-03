@@ -3,19 +3,19 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import {
   BsArrowLeftShort,
-  BsSearch,
+  // BsSearch,
   BsArrowDownShort,
   BsFillPersonFill,
   BsCart4,
   BsEnvelope,
 } from "react-icons/bs";
-import { FaUserAstronaut } from "react-icons/fa";
+// import { FaUserAstronaut } from "react-icons/fa";
 import { MdDashboard } from "react-icons/md";
 import { AiOutlineShop, AiFillPlusCircle } from "react-icons/ai";
 import { CiSettings, CiLogout } from "react-icons/ci";
 import { MdCreate } from "react-icons/md";
 import { BiLogIn } from "react-icons/bi";
-import { UserData } from "../../interfaces/user.interface";
+// import { UserData } from "../../interfaces/user.interface";
 import { AuthContext } from "../../contexts/auth.context";
 
 interface Menu {
@@ -152,8 +152,9 @@ const Navbar: React.FC = () => {
           onClick={() => setOpen(!open)}
         />
         <div className="inline-flex">
+
           <img
-            src="photos/Login/iconAppura.png"
+            src="/photos/Login/iconAppura.png" alt="logo-Appura"
             className={` w-11 -text-4xl rounded cursor-pointer block float-left mr-2 duration-500 ${open && "rotate-[360deg]"
               }`}
           />
@@ -176,7 +177,7 @@ const Navbar: React.FC = () => {
 
         <ul className="pt-7">
           {Menus.map((menu: Menu, index: number) => (
-            <>
+            <div key={index}>
               <li
                 key={index}
                 className={`text-gray-300 text-sm flex items-center gap-x-4 cursor-pointer p-2 hover:bg-light-blue rounded-md mt-2 ${menu.spacing ? "mt-9" : "mt-2"
@@ -212,7 +213,7 @@ const Navbar: React.FC = () => {
                   ))}
                 </ul>
               )}
-            </>
+            </div>
           ))}
         </ul>
       </div>

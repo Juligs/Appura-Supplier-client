@@ -26,9 +26,9 @@ const ProductForm: React.FC<ProductFormProps> = ({
     productImg: "",
     inventory: 0,
     pricePerUnit: 0,
-    categories: "",
+    categories: "Choose a category",
     _id: "",
-    unit: "",
+    unit: "Choose a unit",
   });
   let [isOpen, setIsOpen] = useState(true);
 
@@ -175,10 +175,9 @@ const ProductForm: React.FC<ProductFormProps> = ({
               onChange={handleOnSelectChange}
               name="categories"
             >
-              <option selected>Choose a category </option>
-
+              <option value='Choose a category'>Choose a category</option>
               {ProductTypes.map((type: string, index: number) => (
-                <option value={type}>{type}</option>
+                <option value={type} key={index}>{type}</option>
               ))}
             </select>
           </div>
@@ -194,10 +193,9 @@ const ProductForm: React.FC<ProductFormProps> = ({
               onChange={handleOnSelectChangeUnit}
               name="unit"
             >
-              <option selected>Choose a unit </option>
-
+              <option value="Choose a unit">Choose a unit</option>
               {UnitProducts.map((type: string, index: number) => (
-                <option value={type}>{type}</option>
+                <option value={type} key={index}>{type}</option>
               ))}
             </select>
           </div>

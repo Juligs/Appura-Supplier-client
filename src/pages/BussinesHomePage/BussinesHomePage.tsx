@@ -44,6 +44,7 @@ const BussinesHomePage: React.FC = () => {
           className="border-radius: 10px object-cover"
         >
           <img
+            alt="businessimg"
             className="object-cover"
             src={business?.businessImg}
             style={{ width: "100%", height: "90%", objectFit: "cover" }}

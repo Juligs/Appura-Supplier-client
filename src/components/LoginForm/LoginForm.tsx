@@ -57,7 +57,7 @@ const LoginForm: React.FC = () => {
         <div className="text-center">
           <div className="flex flex-wrap justify-center">
             <div className="w-100%">
-              <img src="photos/Login/LoginLogo.png" alt="..." />
+              <img src="/photos/Login/LoginLogo.png" alt="..." />
             </div>
           </div>
         </div>
