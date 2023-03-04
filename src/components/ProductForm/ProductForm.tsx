@@ -99,7 +99,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
 
   return (
     <>
-      <div className="bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 sm:max-w-lg w-full p-10 bg-white rounded-xl z-10">
+      <div className=" border border-gray-200 rounded-lg shadow  sm:max-w-lg w-full p-10 bg-white z-10">
         <div className="text-center">
           <h2 className="mt-5 text-3xl font-bold text-gray-900">
             Let's add products to your shop!
@@ -164,14 +164,13 @@ const ProductForm: React.FC<ProductFormProps> = ({
             />
           </div>
           <div>
-            <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            <label className="block mb-2 text-sm font-medium text-gray-900 ">
               Category
             </label>
 
             <select
               id="categories"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-              value={categories}
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               onChange={handleOnSelectChange}
               name="categories"
             >
@@ -188,7 +187,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
 
             <select
               id="unit"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
               value={unit}
               onChange={handleOnSelectChangeUnit}
               name="unit"
@@ -207,7 +206,7 @@ const ProductForm: React.FC<ProductFormProps> = ({
           <input
             type="file"
             onChange={handleFileUpload}
-            className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
+            className="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50"
             aria-describedby="user_avatar_help"
             id="user_avatar"
           />

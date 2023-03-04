@@ -13,7 +13,7 @@ const BusinessCard: React.FC<BusinessCardProps> = ({
     <div className="w-100% bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700 m-6">
       <a href={`/marketplace/details/${_id}`}>
         <img
-          className="rounded-t-lg businessCard w-full object-cover"
+          className="rounded-t-lg businessCard w-[400px] h-[250px] object-cover"
           src={businessImg}
           alt="product image"
         />

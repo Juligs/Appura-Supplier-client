@@ -11,7 +11,7 @@ import ProductForm from "../../components/ProductForm/ProductForm";
 import { AiFillPlusCircle } from "react-icons/ai";
 
 const BussinesHomePage: React.FC = () => {
-  let [isOpen, setIsOpen] = useState(true);
+  let [isOpen, setIsOpen] = useState(false);
 
   const fireFinalActions = () => {
     closeModal();
@@ -54,13 +54,13 @@ const BussinesHomePage: React.FC = () => {
         <div className="flex">
           <div>
 
-            <div className="relative bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-1000 sm:max-w-lg w-full p-10 bg-white rounded-xl z-10 mb-5">
+            <div className="relative bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-1000 sm:max-w-550 w-full p-10 bg-white rounded-xl z-10 mb-5">
               <h1 className="font-medium leading-tight text-5xl mt-0 mb-2 text-dark-blue font-extrabold">
                 {business?.name}
               </h1>
               <p className="text-gray-500"> {business?.description}</p>
             </div>
-            <hr />
+
             <div>
               <div className="grid grid-cols-1 md:grid-cols-4">
                 {business?.productList?.map((product: ProductData) => (
